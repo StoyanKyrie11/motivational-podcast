@@ -2,26 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+::before,
+::after {
+  border-width: 0;
 }
+
+@layer base {
+  :root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(0, 0%, 0%);
+  }
+
+  @media(prefers-color-scheme:dark) {
+    /* Swap the values for the dark theme */
+    :root {
+      
+    }
+  }
+}
+
+[data-theme='dark'] {
+  -background: hsl(0, 0%, 0%);
+  -foreground: hsl(0, 0%, 100%);
+}
+
+body {
+  @apply leading-[normal] m-0;
+  @apply bg-light-mode-bg-color dark:bg-dark-mode-bg-color;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    font-family: var(--font-opensans);
   }
 }
 
+/* Modify the tailwind.config.js to include those colors, think about colors for the buttons, nav, footer, forms, subscription pop-up + add Tailwind presets for customizations of the colors and themes
+ */
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply leading-[normal] m-0;
+  @apply bg-light-mode-bg-color dark:bg-dark-mode-bg-color;
 }
