@@ -2,49 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-::before,
-::after {
-  border-width: 0;
-}
-
 @layer base {
+  ::before,
+  ::after {
+    border-width: 0;
+  }
+
   :root {
     --background: hsl(0, 0%, 100%);
     --foreground: hsl(0, 0%, 0%);
   }
 
-  @media(prefers-color-scheme:dark) {
+  @media (prefers-color-scheme: dark) {
     /* Swap the values for the dark theme */
     :root {
-      
     }
   }
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   -background: hsl(0, 0%, 0%);
   -foreground: hsl(0, 0%, 100%);
 }
 
-body {
-  @apply leading-[normal] m-0;
-  @apply bg-light-mode-bg-color dark:bg-dark-mode-bg-color;
-}
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-    font-family: var(--font-opensans);
+@layer components {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+      font-family: var(--font-opensans);
+    }
   }
-}
 
-/* Modify the tailwind.config.js to include those colors, think about colors for the buttons, nav, footer, forms, subscription pop-up + add Tailwind presets for customizations of the colors and themes
- */
+  /* Modify the tailwind.config.js to include those colors, think about colors for the buttons, nav, footer, forms, subscription pop-up + add Tailwind presets for customizations of the colors and themes
+   */
 
-body {
-  @apply leading-[normal] m-0;
-  @apply bg-light-mode-bg-color dark:bg-dark-mode-bg-color;
+  body {
+    @apply leading-[normal] m-0;
+    @apply bg-light-mode-bg-color dark:bg-dark-mode-bg-color;
+  }
 }

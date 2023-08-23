@@ -1,7 +1,26 @@
+"use client";
+
+import AboutMe from '@src/components/AboutMe';
+import { lazy, useEffect, useState } from 'react';
+
+const Navbar = lazy(() => import("@src/components/Navbar"));
+const Hero = lazy(() => import("@src/components/Hero"));
 
 export default function Home() {
+
+  const [ mounted, setMounted ] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
-    <main className="grid grid-cols-12 min-h-screen mx-auto">
-    </main>
+    <>
+      <Navbar />
+      <Hero />
+      <AboutMe />
+    </>
   );
 }

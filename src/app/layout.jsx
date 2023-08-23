@@ -1,11 +1,13 @@
-import Navbar from "@/components/Navbar";
+import LoadingSkeleton from "@components/LoadingSkeleton";
 import { Montserrat_Alternates } from "next/font/google";
-import './globals.css';
+import { Suspense } from "react";
 import Providers from './providers';
 
-export const mont = Montserrat_Alternates({
-  subsets: ['cyrillic'],
-  weight: ['400', '700'],
+import './globals.css';
+
+export const montserrat = Montserrat_Alternates({
+  subsets: [ 'cyrillic' ],
+  weight: [ '400', '700' ],
   display: 'swap',
   variable: '--font-opensans'
 });
@@ -20,11 +22,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={mont.className}>
-        <Providers>
-          <Navbar />
-          {children}
-        </Providers>
+      <body className={ montserrat.className }>
+        <Suspense fallback={ <LoadingSkeleton /> }>
+          <Providers>
+            { children }
+          </Providers>
+        </Suspense>
       </body>
     </html>
   );
