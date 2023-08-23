@@ -2,19 +2,10 @@
 
 import Link from 'next/link';
 
-import { useEffect, useState } from 'react';
 import ThemeChanger from './ThemeChanger';
 
 
 const Navbar = () => {
-
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) return null;
 
     return (
         <nav className='bg-red-300 sticky'>
