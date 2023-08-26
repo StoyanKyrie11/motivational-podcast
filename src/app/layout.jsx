@@ -7,9 +7,10 @@ import './globals.css';
 
 export const montserrat = Montserrat_Alternates({
   subsets: [ 'cyrillic' ],
+  style: [ 'normal', 'italic' ],
   weight: [ '400', '700' ],
   display: 'swap',
-  variable: '--font-opensans'
+  variable: '--font-montserrat'
 });
 
 export const metadata = {

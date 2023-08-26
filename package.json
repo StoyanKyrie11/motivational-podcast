@@ -24,7 +24,6 @@
     "tailwindcss-animate": "^1.0.6"
   },
   "devDependencies": {
-    "@types/react": "^18.2.21",
-    "stylelint-config-recommended": "^13.0.0"
+    "@types/react": "^18.2.21"
   }
 }

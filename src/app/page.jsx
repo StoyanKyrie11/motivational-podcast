@@ -1,6 +1,8 @@
 "use client";
 
 import AboutMe from '@src/components/AboutMe';
+import Footer from '@src/components/Footer';
+import Partners from '@src/components/Partners';
 import { lazy, useEffect, useState } from 'react';
 
 const Navbar = lazy(() => import("@src/components/Navbar"));
@@ -21,6 +23,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutMe />
+      <Partners />
+      <Footer />
     </>
   );
 }

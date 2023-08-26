@@ -7,7 +7,7 @@ module.exports = {
     "./src/**/*.{js,jsx}",
     'node_modules/preline/dist/*.js',
   ],
-  darkMode: ["class"],
+  darkMode: [ "class" ],
   theme: {
     extend: {
       colors: {
@@ -20,5 +20,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('preline/plugin'),],
+  plugins: [ require('preline/plugin'), require('flowbite/plugin') ],
 };
