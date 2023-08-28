@@ -14,11 +14,12 @@ module.exports = {
         /* Replace the colors with their HSL equivalents */
         "primary-color": "#9f4298",
         "secondary-color": "#c2b4d6",
-        "navbar-bg-color": "#C4BA3B",
+        "navbar-color": "#C8326E",
+        'navbar-btn-color': '#E7E7E9',
         "light-mode-bg-color": "#d1afd3",
         "dark-mode-bg-color": "#9f4298",
       },
     },
   },
-  plugins: [ require('preline/plugin'), require('flowbite/plugin') ],
+  plugins: [ require('preline/plugin') ],
 };

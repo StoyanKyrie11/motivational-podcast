@@ -5,9 +5,9 @@ import { myData } from 'data/staticData.js';
 
 const AboutMe = () => {
     return (
-        <div className='flex flex-col flex-auto text-center gap-2 pb-5'>
-            <h2 className="self-center py-3 italic font-semibold">{ myData.title }</h2>
-            <article className='pb-5'>
+        <div id="about-me-section" className='grid grid-cols-1 grid-rows-1 text-center'>
+            <h1 className="text-3xl self-center italic font-semibold pb-3">{ myData.title }</h1>
+            <article className='leading-[2rem] font-medium pb-5'>
                 { myData.body }
             </article>
         </div>

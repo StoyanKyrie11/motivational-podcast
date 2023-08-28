@@ -17,7 +17,8 @@ const Partners = () => {
     return (
         <section className='bg-blue-300 py-10 shadow-inner justify-center'>
             <div className="container mx-auto px-4">
-                <h2 className="text-xl font-semibold mb-6 text-center">My partners</h2>
+                <h2 className="text-xl font-semibold mb-2 text-center">My partners</h2>
+                <h3 className='text-md font-medium text-center italic'>'What my partners have to say for me'</h3>
                 <Slider />
             </div>
         </section>

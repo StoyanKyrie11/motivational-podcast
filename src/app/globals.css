@@ -44,6 +44,6 @@
 
   body {
     @apply leading-[normal] m-0;
-    @apply bg-light-mode-bg-color dark:bg-dark-mode-bg-color;
+    @apply bg-slate-100 dark:bg-dark-mode-bg-color;
   }
 }

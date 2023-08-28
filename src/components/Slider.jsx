@@ -41,32 +41,39 @@ const Slider = () => {
         setCurrIndex(newIndex);
     };
 
-    const moveToNext = (slideIndex) => {
+    const moveToNext = slideIndex => {
         setCurrIndex(slideIndex);
     };
 
+    const navHandler = slideIndex => {
+        moveToNext(slideIndex);
+    };
+
     return (
-        <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group'>
+        <div className='max-w-[100vw] h-[80vh] w-[80vw] m-auto py-4 px-4 relative group'>
             <div
                 style={ { backgroundImage: `url(${slides[ currIndex ].url})` } }
                 className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
             ></div>
-            {/* Left Arrow */ }
-            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
-                <BsChevronCompactLeft onClick={ prevSlide } size={ 30 } className='bg-slate-300 rounded-full p-1 text-blue-600' />
+
+            {/* Backwards */ }
+            <div className='hidden group-hover:block transition duration-500 hover:scale-125 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+                <BsChevronCompactLeft onClick={ prevSlide } size={ 30 } className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white' />
             </div>
-            {/* Right Arrow */ }
-            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
-                <BsChevronCompactRight onClick={ nextSlide } size={ 30 } className='bg-slate-300 rounded-full p-1 text-blue-600' />
+
+            {/* Forward */ }
+            <div className='hidden group-hover:block transition duration-500 hover:scale-125 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+                <BsChevronCompactRight onClick={ nextSlide } size={ 30 } className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white' />
             </div>
-            <div className='flex top-4 justify-center py-2'>
-                { slides.map((slide, slideIndex) => (
+
+            <div className='flex top-3 justify-center py-2'>
+                { slides.map((_, slideIndex) => (
                     <div
                         key={ slideIndex }
-                        onClick={ () => nextSlide(slideIndex) }
-                        className='text-2xl cursor-pointer hover:text-orange-500 hover:dark:text-indigo-700'
+                        onClick={ navHandler }
+                        className='text-xl cursor-pointer'
                     >
-                        <RxDotFilled className='text-pink-500' />
+                        <RxDotFilled className={ `transition-all rounded-full  ${currIndex === slideIndex && "transform bg-slate-200 dark:bg-violet-400 transition duration-200 hover:scale-125"}` } />
                     </div>
                 )) }
             </div>

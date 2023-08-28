@@ -1,8 +1,10 @@
 "use client";
 
 import AboutMe from '@src/components/AboutMe';
+import Contacts from '@src/components/Contacts';
+import FAQ from '@src/components/FAQ';
 import Footer from '@src/components/Footer';
-import Partners from '@src/components/Partners';
+import LargeTextComponent from '@src/components/LargeTextComponent';
 import { lazy, useEffect, useState } from 'react';
 
 const Navbar = lazy(() => import("@src/components/Navbar"));
@@ -23,7 +25,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutMe />
-      <Partners />
+      <LargeTextComponent />
+      <Contacts />
+      <FAQ />
       <Footer />
     </>
   );
